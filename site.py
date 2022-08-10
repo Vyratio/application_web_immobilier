@@ -1,29 +1,18 @@
 
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import datetime
-import seaborn as sns
-import numpy as np
 
-import math
 
-from scipy.stats import pearsonr
-from sklearn.linear_model import LinearRegression
 
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import explained_variance_score
 
-from sklearn import tree, linear_model
-from sklearn.metrics import r2_score
-from sklearn.model_selection import learning_curve
+
+
 from sklearn.metrics import *
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
-import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Ridge
-from PIL import Image
 
 
   
