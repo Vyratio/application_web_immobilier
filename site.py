@@ -80,43 +80,42 @@ if(st.button('Calculer le prix hypothétique')):
 # pour pouvoir rentrer les données nécessaires pour pouvoir avoir un prix plus 
 #proche de la réalité
 
-"""
-
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler, OneHotEncoder, PolynomialFeatures
-from sklearn.linear_model import LinearRegression, Lasso
-from sklearn.model_selection import train_test_split
-from sklearn.compose import ColumnTransformer
-
-df['zipcode'] = df['zipcode'].astype('str')
-df = df.drop(['date'], axis=1)
-df_dum = pd.get_dummies(df)
-df_dum.corrwith(df['price'])
-
-X = df.drop('price', axis=1)
-y = df.price
-X_train, X_test, y_train, y_test = train_test_split(X,y)
-num_col = list(X.select_dtypes(include=[float,int]).columns)
-cat_col = list(X.select_dtypes(include=[object]).columns)
-my_num_pipe = make_pipeline(StandardScaler(), PolynomialFeatures())
-preprocessing = ColumnTransformer([
-    ("one_hot", OneHotEncoder(),cat_col),
-    ("scaling", my_num_pipe, num_col)
-])
 
 
-my_pipe_lr = make_pipeline(preprocessing, LinearRegression())
+#from sklearn.pipeline import make_pipeline
+#from sklearn.preprocessing import StandardScaler, OneHotEncoder, PolynomialFeatures
+#from sklearn.linear_model import LinearRegression, Lasso
+#from sklearn.model_selection import train_test_split
+#from sklearn.compose import ColumnTransformer
 
-my_pipe_lasso = make_pipeline(preprocessing, Lasso())
+#df['zipcode'] = df['zipcode'].astype('str')
+#df = df.drop(['date'], axis=1)
+#df_dum = pd.get_dummies(df)
+#df_dum.corrwith(df['price'])
 
-my_pipe_lasso.fit(X_train, y_train)
+#X = df.drop('price', axis=1)
+#y = df.price
+#X_train, X_test, y_train, y_test = train_test_split(X,y)
+#num_col = list(X.select_dtypes(include=[float,int]).columns)
+#cat_col = list(X.select_dtypes(include=[object]).columns)
+#my_num_pipe = make_pipeline(StandardScaler(), PolynomialFeatures())
+#preprocessing = ColumnTransformer([
+#    ("one_hot", OneHotEncoder(),cat_col),
+#    ("scaling", my_num_pipe, num_col)
+#])
 
-my_pipe_lasso.score(X_test, y_test)
 
-prix_prediction = my_pipe_lasso.predict(maison_propriete)
+#my_pipe_lr = make_pipeline(preprocessing, LinearRegression())
 
-prix = round(prediction[0])
-st.write("# Le prix de votre maison est:", prix, "$")
+#my_pipe_lasso = make_pipeline(preprocessing, Lasso())
+
+#my_pipe_lasso.fit(X_train, y_train)
+
+#my_pipe_lasso.score(X_test, y_test)
+
+#prix_prediction = my_pipe_lasso.predict(maison_propriete)
+
+#prix = round(prediction[0])
+#st.write("# Le prix de votre maison est:", prix, "$")
 
 
-"""
